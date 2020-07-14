@@ -160,7 +160,7 @@ HtmlHiLink mkdCodeDelimiter String
 HtmlHiLink mkdCodeStart     String
 HtmlHiLink mkdCodeEnd       String
 HtmlHiLink mkdFootnote      Comment
-HtmlHiLink mkdBlockquote    Comment
+HtmlHiLink mkdBlockquote    Identifier
 HtmlHiLink mkdListItem      Identifier
 HtmlHiLink mkdRule          Identifier
 HtmlHiLink mkdLineBreak     Visual
