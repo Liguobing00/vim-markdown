@@ -870,9 +870,9 @@ augroup Mkd
     " These autocmd calling s:MarkdownRefreshSyntax need to be kept in sync with
     " the autocmds calling s:MarkdownSetupFolding in after/ftplugin/markdown.vim.
     autocmd! * <buffer>
-    autocmd BufWinEnter <buffer> call s:MarkdownRefreshSyntax(1)
+    " autocmd BufWinEnter <buffer> call s:MarkdownRefreshSyntax(1)
     autocmd BufUnload <buffer> call s:MarkdownClearSyntaxVariables()
-    autocmd BufWritePost <buffer> call s:MarkdownRefreshSyntax(0)
+    " autocmd BufWritePost <buffer> call s:MarkdownRefreshSyntax(0)
     autocmd InsertEnter,InsertLeave <buffer> call s:MarkdownRefreshSyntax(0)
     autocmd CursorHold,CursorHoldI <buffer> call s:MarkdownRefreshSyntax(0)
 augroup END
