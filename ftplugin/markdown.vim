@@ -790,7 +790,8 @@ function! s:MarkdownHighlightSources(force)
     for line in getline(1, '$')
         let ft = matchstr(line, '```\s*\zs[0-9A-Za-z_+-]*\ze.*')
         " echom ft
-        if !empty(ft) && ft !~ '^\d*$' | let filetypes[ft] = 1 | endif
+        " if !empty(ft) && ft !~ '^\d*$' | let filetypes[ft] = 1 | endif
+        let filetypes[ft] = 1
     endfor
     if !exists('b:mkd_known_filetypes')
         let b:mkd_known_filetypes = {}
