@@ -7,14 +7,10 @@
 
 
 " Read the HTML syntax to start with
-if version < 600
-  so <sfile>:p:h/html.vim
-else
-  runtime! syntax/html.vim
+" so <sfile>:p:h/html.vim
 
-  if exists('b:current_syntax')
-    unlet b:current_syntax
-  endif
+if exists('b:current_syntax')
+unlet b:current_syntax
 endif
 
 if version < 600
