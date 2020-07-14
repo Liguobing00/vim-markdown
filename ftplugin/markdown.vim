@@ -789,7 +789,7 @@ function! s:MarkdownHighlightSources(force)
     let filetypes = {}
     for line in getline(1, '$')
         let ft = matchstr(line, '```\s*\zs[0-9A-Za-z_+-]*\ze.*')
-        echom ft
+        " echom ft
         if !empty(ft) && ft !~ '^\d*$' | let filetypes[ft] = 1 | endif
     endfor
     if !exists('b:mkd_known_filetypes')
@@ -873,9 +873,9 @@ augroup Mkd
     " These autocmd calling s:MarkdownRefreshSyntax need to be kept in sync with
     " the autocmds calling s:MarkdownSetupFolding in after/ftplugin/markdown.vim.
     autocmd! * <buffer>
-    " autocmd BufWinEnter <buffer> call s:MarkdownRefreshSyntax(1)
+    autocmd BufWinEnter <buffer> call s:MarkdownRefreshSyntax(1)
     autocmd BufUnload <buffer> call s:MarkdownClearSyntaxVariables()
-    " autocmd BufWritePost <buffer> call s:MarkdownRefreshSyntax(0)
+    autocmd BufWritePost <buffer> call s:MarkdownRefreshSyntax(0)
     autocmd InsertEnter,InsertLeave <buffer> call s:MarkdownRefreshSyntax(0)
     autocmd CursorHold,CursorHoldI <buffer> call s:MarkdownRefreshSyntax(0)
 augroup END
